@@ -51,10 +51,6 @@
         "description": "Whether to use Service Accounts or not. For this to work see 'Using Service Accounts' in repo.",
         "required": false
       },
-      "AUTHORIZED_CHATS": {
-        "description": "Fill User ID and Chat ID of you want to authorize.",
-        "required": false
-      },
       "INDEX_URL": {
         "description": "Refer to https://github.com/ParveenBhadooOfficial/Google-Drive-Index The URL should not have any trailing '/'.",
         "value": "https://sathishsk.skmassking.workers.dev/0:/Mirror%20Bot/"
@@ -66,14 +62,6 @@
       "TELEGRAM_HASH": {
         "description": "This is to authenticate to your Telegram account for downloading Telegram files. You can get this from https://my.telegram.org.",
         "value": "0d8c8aabe36b01db6a26a7f2780fa660"
-      },
-      "HEROKU_API_KEY": {
-        "description": "Your Heroku API key, get it from https://dashboard.heroku.com/account.",
-        "required": false
-      },
-      "HEROKU_APP_NAME": {
-        "description": "Add the Heroku app name here.",
-        "required": false
       },
       "UPSTREAM_REPO": {
         "description": "Link for Bot Upstream Repo, If you want default update, Fill https://github.com/ayushteke/slam_aria_mirror_bot_HEROKU",
@@ -101,26 +89,6 @@
         "description": "Your password for your mega.nz account.",
         "value": "8489177893"
       },
-      "BLOCK_MEGA_FOLDER": {
-        "description": "If you want to remove mega.nz folder support, set it to True.",
-        "required": false
-      },
-      "BLOCK_MEGA_LINKS": {
-        "description": "If you want to remove mega.nz mirror support, set it to True.",
-        "required": false
-      },
-      "TORRENT_DIRECT_LIMIT": {
-        "description": "To limit the Torrent/Direct mirror size, Leave space between number and unit. Available units is (gb or GB, tb or TB).",
-        "required": false
-      },
-      "CLONE_LIMIT": {
-        "description": "To limit cloning Google Drive (leave space between number and unit, Available units is (gb or GB, tb or TB).",
-        "required": false
-      },
-      "MEGA_LIMIT": {
-        "description": "To limit downloading Mega (leave space between number and unit, Available units is (gb or GB, tb or TB).",
-        "required": false
-      },
       "STOP_DUPLICATE_MIRROR": {
         "description": "If this field is set to True, bot will check file in Drive, if it is present in Drive, downloading will be stopped.",
         "value": "true"
@@ -137,15 +105,7 @@
       },
       "IGNORE_PENDING_REQUESTS": {
         "description": "If you want the bot to ignore pending requests after it restarts, set this to True.",
-        "required": false
-      },
-      "SHORTENER": {
-        "description": "If you want to use shortener in Gdrive and index link.",
-        "required": false
-      },
-      "SHORTENER_API": {
-        "description": "Fill your shortener api key if you are using shortener.",
-        "required": false
+        "value": false
       },
       "IMAGE_URL": {
         "description": "Show Image/Logo in /start message, Use telegra.ph or any direct link image.",
@@ -157,30 +117,6 @@
         "value": "true",
         "required": false
        },
-      "BUTTON_FOUR_NAME": {
-        "description": "Extra buttons (optional).",
-        "required": false
-      },
-      "BUTTON_FOUR_URL": {
-        "description": "Fill your URL if you are using extra buttons.",
-        "required": false
-      },
-      "BUTTON_FIVE_NAME": {
-        "description": "Extra buttons (optional).",
-        "required": false
-      },
-      "BUTTON_FIVE_URL": {
-        "description": "Fill your URL if you are using extra buttons.",
-        "required": false
-      },
-      "BUTTON_SIX_NAME": {
-        "description": "Extra buttons (optional).",
-        "required": false
-      },
-      "BUTTON_SIX_URL": {
-        "description": "Fill your URL if you are using extra buttons.",
-        "required": false
-      }
     },
     "addons": [
       {
