@@ -22,7 +22,7 @@
       },
       "GDRIVE_FOLDER_ID": {
         "description": "This is the folder ID of the Google Drive Folder to which you want to upload all the mirrors.",
-        "Value": "1VPlEFMvn40upgZMGWbtqdG_YMOivnM-q"
+        "value": "1VPlEFMvn40upgZMGWbtqdG_YMOivnM-q"
       },
       "DOWNLOAD_DIR": {
         "description": "The path to the local folder where the downloads should be downloaded to.",
@@ -36,7 +36,7 @@
       },
       "OWNER_ID": {
         "description": "The Telegram User ID of the Owner of the Bot. Get it by using /info in @MissRose_bot.",
-        "value": 1126746691
+        "value": "1126746691"
       },
       "AUTO_DELETE_MESSAGE_DURATION": {
         "description": "Interval of time (in seconds), after which the bot deletes it's message (and command message) which is expected to be viewed instantly. Note: Set to -1 to never automatically delete messages.",
@@ -61,7 +61,7 @@
       },
       "TELEGRAM_API": {
         "description": "This is to authenticate to your Telegram account for downloading Telegram files. You can get this from https://my.telegram.org.",
-        "value": 1677067 
+        "value": 1677067
       },
       "TELEGRAM_HASH": {
         "description": "This is to authenticate to your Telegram account for downloading Telegram files. You can get this from https://my.telegram.org.",
