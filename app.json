@@ -116,7 +116,7 @@
         "description": "View Link button to open file Index Link in browser instead of direct download link, you can figure out if it's compatible with your Index code or not, open any video from you Index and check if the END of link from browser link bar is ?a=view, if yes make it True it will work (Compatible with Bhadoo Index Code).",
         "value": "true",
         "required": false
-       },
+       }
     },
     "addons": [
       {
