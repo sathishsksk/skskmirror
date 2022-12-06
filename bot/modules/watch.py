@@ -17,53 +17,42 @@ import threading
 
 listener_dict = {}
 
-def _watch(bot, update, isTar=False):
+def _watch(bot: Bot, update, isTar=False):
     mssg = update.message.text
     message_args = mssg.split(' ')
-    name_args = mssg.split('|', maxsplit=1)
-    user_id = update.message.from_user.id
-    msg_id = update.message.message_id
-
+    name_args = mssg.split('|')
+    
     try:
-        link = message_args[1].strip()
-        if link.startswith("|") or link.startswith("pswd: "):
-            link = ''
+        link = message_args[1]
     except IndexError:
-        link = ''
-
+        msg = f"/{BotCommands.WatchCommand} [youtube-dl supported link] [quality] |[CustomName] to mirror with youtube-dl.\n\n"
+        msg += "<b>Note: Quality and custom name are optional</b>\n\nExample of quality: audio, 144, 240, 360, 480, 720, 1080, 2160."
+        msg += "\n\nIf you want to use custom filename, enter it after |"
+        msg += f"\n\nExample:\n<code>/{BotCommands.WatchCommand} https://youtu.be/Pk_TthHfLeE 720 |Slam</code>\n\n"
+        msg += "This file will be downloaded in 720p quality and it's name will be <b>Slam</b>"
+        sendMessage(msg, bot, update)
+        return
+    
     try:
-        name = name_args[1]
-        name = name.split(' pswd: ')[0]
-        name = name.strip()
+      if "|" in mssg:
+        mssg = mssg.split("|")
+        qual = mssg[0].split(" ")[2]
+        if qual == "":
+          raise IndexError
+      else:
+        qual = message_args[2]
+      if qual != "audio":
+        qual = f'bestvideo[height<={qual}]+bestaudio/best[height<={qual}]'
     except IndexError:
-        name = ''
-
-    pswdMsg = mssg.split(' pswd: ')
-    if len(pswdMsg) > 1:
-        pswd = pswdMsg[1]
-
-    if update.message.from_user.username:
-        tag = f"@{update.message.from_user.username}"
-    else:
-        tag = update.message.from_user.mention_html(update.message.from_user.first_name)
-
-    reply_to = update.message.reply_to_message
-    if reply_to is not None:
-        link = reply_to.text.strip()
-        if reply_to.from_user.username:
-            tag = f"@{reply_to.from_user.username}"
-        else:
-            tag = reply_to.from_user.mention_html(reply_to.from_user.first_name)
-
-    if not is_url(link):
-        help_msg = "<b>Send link along with command line:</b>"
-        help_msg += "\n<code>/command</code> {link} |newname pswd: mypassword [𝚣𝚒𝚙]"
-        help_msg += "\n\n<b>By replying to link:</b>"
-        help_msg += "\n<code>/command</code> |newname pswd: mypassword [𝚣𝚒𝚙]"
-        return sendMessage(help_msg, bot, update)
-
-    LOGGER.info(link)
-    listener = MirrorListener(bot, update, isTar)
+      qual = "bestvideo+bestaudio/best"
+    
+    try:
+      name = name_args[1]
+    except IndexError:
+      name = ""
+    
+    pswd = ""
+    listener = MirrorListener(bot, update, pswd, isTar)
     buttons = button_build.ButtonMaker()
     best_video = "bv*+ba/b"
     best_audio = "ba/b"
