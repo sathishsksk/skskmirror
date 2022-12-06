@@ -1,5 +1,6 @@
 from threading import Thread
 from telegram.ext import CommandHandler, CallbackQueryHandler
+from telegram import Bot, Update
 from telegram import InlineKeyboardMarkup
 from time import sleep
 from re import split as resplit
@@ -12,6 +13,7 @@ from bot.helper.mirror_utils.download_utils.youtube_dl_download_helper import Yo
 from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.filters import CustomFilters
 from .mirror import MirrorListener
+import threading
 
 
 def _watch(bot: Bot, update, isTar=False):
