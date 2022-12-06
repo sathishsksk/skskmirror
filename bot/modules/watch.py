@@ -15,11 +15,14 @@ from bot.helper.telegram_helper.filters import CustomFilters
 from .mirror import MirrorListener
 import threading
 
+listener_dict = {}
 
-def _watch(bot: Bot, update, isTar=False):
+def _watch(bot, update, isTar=False, pswd=None, tag=None):
     mssg = update.message.text
     message_args = mssg.split(' ')
-    name_args = mssg.split('|')
+    name_args = mssg.split('|', maxsplit=1)
+    user_id = update.message.from_user.id
+    msg_id = update.message.message_id
 
     try:
         link = message_args[1].strip()
@@ -60,7 +63,7 @@ def _watch(bot: Bot, update, isTar=False):
         return sendMessage(help_msg, bot, update)
 
     LOGGER.info(link)
-    listener = MirrorListener(bot, update, isTar)
+    listener = MirrorListener(bot, update, isTar, pswd=pswd, tag=tag)
     buttons = button_build.ButtonMaker()
     best_video = "bv*+ba/b"
     best_audio = "ba/b"
