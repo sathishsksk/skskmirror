@@ -238,6 +238,7 @@ def watchTar(update, context):
 
 
 def watch(update, context):
+    _watch(context.bot, update)
 
 
 mirror_handler = CommandHandler(BotCommands.WatchCommand, watch,
