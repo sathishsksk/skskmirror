@@ -63,7 +63,6 @@ def _watch(bot: Bot, update, isTar=False):
     buttons = button_build.ButtonMaker()
     best_video = "bv*+ba/b"
     best_audio = "ba/b"
-    ydl = YoutubeDLHelper(listener)
     try:
         result = ydl.extractMetaData(link, name, True)
     except Exception as e:
@@ -237,7 +236,7 @@ def watchTar(update, context):
 
 
 def watch(update, context):
-    _watch(context.bot, update)
+    _watch(context.bot, update, True)
 
 
 mirror_handler = CommandHandler(BotCommands.WatchCommand, watch,
