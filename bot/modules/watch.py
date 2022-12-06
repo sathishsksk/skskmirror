@@ -52,7 +52,7 @@ def _watch(bot: Bot, update, isTar=False):
       name = ""
     
     pswd = ""
-    listener = MirrorListener(bot, update, pswd, isTar)
+    listener = MirrorListener(bot, update, pswd, isTar, tag)
     buttons = button_build.ButtonMaker()
     best_video = "bv*+ba/b"
     best_audio = "ba/b"
