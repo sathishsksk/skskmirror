@@ -60,9 +60,11 @@ def _watch(bot: Bot, update, isTar=False):
         return sendMessage(help_msg, bot, update)
 
     LOGGER.info(link)
+    listener = MirrorListener(bot, update)
     buttons = button_build.ButtonMaker()
     best_video = "bv*+ba/b"
     best_audio = "ba/b"
+    ydl = YoutubeDLHelper(listener)
     try:
         result = ydl.extractMetaData(link, name, True)
     except Exception as e:
