@@ -60,7 +60,7 @@ def _watch(bot: Bot, update, isTar=False):
         return sendMessage(help_msg, bot, update)
 
     LOGGER.info(link)
-    listener = MirrorListener(bot, update)
+    listener = MirrorListener(bot, update, pswd, isTar)
     buttons = button_build.ButtonMaker()
     best_video = "bv*+ba/b"
     best_audio = "ba/b"
