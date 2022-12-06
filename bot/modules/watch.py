@@ -17,7 +17,7 @@ import threading
 
 listener_dict = {}
 
-def _watch(bot, update, isTar=False, pswd=None, tag=None):
+def _watch(bot, update, isTar=False):
     mssg = update.message.text
     message_args = mssg.split(' ')
     name_args = mssg.split('|', maxsplit=1)
@@ -63,7 +63,7 @@ def _watch(bot, update, isTar=False, pswd=None, tag=None):
         return sendMessage(help_msg, bot, update)
 
     LOGGER.info(link)
-    listener = MirrorListener(bot, update, isTar, pswd=pswd, tag=tag)
+    listener = MirrorListener(bot, update, isTar)
     buttons = button_build.ButtonMaker()
     best_video = "bv*+ba/b"
     best_audio = "ba/b"
