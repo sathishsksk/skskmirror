@@ -43,7 +43,7 @@ def stats(update, context):
             f'<b>├  🎮 RAM : {memory}%</b>\n' \
             f'<b>├  💽 DISK : {disk}%</b>\n' \
             f'<b>│</b>\n' \
-            f'<b>╰──「 🚸 @sk_mass_king 🚸 」</b>'
+            f'<b>╰──「 🚸 @sathish_sk_offl 🚸 」</b>'
     update.effective_message.reply_photo(IMAGE_URL, stats, parse_mode=ParseMode.HTML)
 
 
@@ -53,8 +53,8 @@ This bot can mirror all your links to Google Drive!
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("owner", "@sk_mass_king")
-    buttons.buildbutton("Channel", "https://t.me/AT_BOTs")
+    buttons.buildbutton("owner", "@sathish_sk_offl)
+    buttons.buildbutton("Channel", "https://t.me/sathish_sk_offl")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     LOGGER.info('UID: {} - UN: {} - MSG: {}'.format(update.message.chat.id, update.message.chat.username, update.message.text))
     uptime = get_readable_time((time.time() - botStartTime))
