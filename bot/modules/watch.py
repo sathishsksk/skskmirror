@@ -60,8 +60,7 @@ def _watch(bot: Bot, update, isTar=False):
         return sendMessage(help_msg, bot, update)
 
     LOGGER.info(link)
-    pswd = ""
-    listener = MirrorListener(bot, update, isTar, pswd=pswd, tag=tag)
+    listener = MirrorListener(bot, update, isTar, pswd)
     buttons = button_build.ButtonMaker()
     best_video = "bv*+ba/b"
     best_audio = "ba/b"
@@ -239,7 +238,6 @@ def watchTar(update, context):
 
 
 def watch(update, context):
-    _watch(context.bot, update)
 
 
 mirror_handler = CommandHandler(BotCommands.WatchCommand, watch,
