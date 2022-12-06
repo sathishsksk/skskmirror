@@ -417,7 +417,7 @@ class GoogleDriveHelper:
                     typeee = 'File' 
                 try:
                     msg += f'\n<b>☞ 📦Size : </b><code>{get_readable_file_size(int(meta.get("size")))}</code>'
-                    msg += f'\n<b>☞ 🗳Powerd by : @AT_BOTS</b> '
+                    msg += f'\n<b>☞ 🗳Powerd by : @Sathish_Sk_Offl</b> '
                 except TypeError:
                     pass
                 if INDEX_URL is not None:
