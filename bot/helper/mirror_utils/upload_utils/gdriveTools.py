@@ -558,7 +558,7 @@ class GoogleDriveHelper:
             Telegraph(access_token=telegraph_token).edit_page(path = self.path[prev_page],
                                  title = 'Sk Mirror bot search',
                                  author_name='Sk',
-                                 author_url='https://t.me/Sathish_sk_offl,
+                                 author_url='https://t.me/Sathish_sk_offl',
                                  html_content=content)
         return
 
